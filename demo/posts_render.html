@@ -1,0 +1,18 @@
+<div class="loading" [hidden]="!loading">
+  <h1><i class="icon-spin icon-refresh"></i> Fetching Posts</h1>
+</div>
+<div class="col-md-12" style="margin-top:20px;" [hidden]="loading">
+  <div class="col-md-12">
+    <button (click)="useObservers()" class="btn btn-success">Use Observables</button>
+    <button (click)="usePromise()" class="btn btn-info">Use Promise</button>
+    <button (click)="filterWithUserId()" class="btn btn-primary">Filter with Get</button>
+    <button (click)="create()" class="btn btn-default">Create</button>
+    <button (click)="update()" class="btn btn-default">Update with id 1</button>
+  </div>
+  <div *ngFor="let post of posts" class="col-sm-12">
+    <h3>{{post.id}}. {{post.title}}</h3>
+    <small>
+      {{post.body}}
+    </small>
+  </div>
+</div>
